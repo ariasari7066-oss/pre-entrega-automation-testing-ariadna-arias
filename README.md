@@ -1,6 +1,7 @@
+
 ---
 
-## 🎯 Propósito del proyecto
+##  Propósito del proyecto
 
 Validar mediante pruebas automatizadas que las funciones principales del sitio SauceDemo se comporten correctamente, garantizando que:
 1. El login con credenciales válidas redirija al inventario.  
@@ -9,7 +10,7 @@ Validar mediante pruebas automatizadas que las funciones principales del sitio S
 
 ---
 
-## 🧰 Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 - **Python 3**
 - **Pytest** (estructura de testing)
