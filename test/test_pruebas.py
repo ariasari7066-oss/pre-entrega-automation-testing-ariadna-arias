@@ -1,4 +1,5 @@
 import pytest
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 import sys
 import os
@@ -65,6 +66,9 @@ def test_catalogo(driver):
 
     time.sleep(5)
     tomar_screenshot(driver, "catalogo.png")
+    
+    driver.save_screenshot("capturas/url_post_login.png")
+    return True
 
 
 
