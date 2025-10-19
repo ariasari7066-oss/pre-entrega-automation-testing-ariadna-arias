@@ -2,12 +2,13 @@ import pytest
 from selenium.webdriver.common.by import By
 import sys
 import os
+import time
 
 # Agrega la carpeta padre al path para poder importar módulos desde utils
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
 
 # Importamos funciones helper: login_saucedemo para loguearse y get_driver para inicializar Selenium
-from utils.auxiliares import login_saucedemo, get_driver
+from utils.auxiliares import login_saucedemo, get_driver , tomar_screenshot
 
 # -------------------------------
 # Fixture de pytest para inicializar el navegador
@@ -20,6 +21,7 @@ def driver():
     yield driver
     # Al finalizar el test, cerramos el navegador para liberar recursos
     driver.quit()
+
 
 # -------------------------------
 # Test 1: Login correcto
@@ -37,6 +39,7 @@ def test_login(driver):
     # Verificamos que el título sea 'Products'
     assert titulo == 'Products'
 
+
 # -------------------------------
 # Test 2: Verificación del catálogo de productos
 # -------------------------------
@@ -49,6 +52,21 @@ def test_catalogo(driver):
     
     # Verificamos que haya al menos un producto en el catálogo
     assert len(products) > 0
+
+ #  Validar que elementos importantes de la interfaz estén presentes
+
+    # Menú lateral
+    menu_btn = driver.find_element(By.ID, 'react-burger-menu-btn')
+    assert menu_btn.is_displayed()
+
+    # Filtros de ordenamiento
+    filtro = driver.find_element(By.CLASS_NAME, 'product_sort_container')
+    assert filtro.is_displayed()
+
+    time.sleep(5)
+    tomar_screenshot(driver, "catalogo.png")
+
+
 
 # -------------------------------
 # Test 3: Agregar producto al carrito
@@ -71,3 +89,5 @@ def test_carrito(driver):
     
     # Verificamos que el carrito tenga un producto
     assert badge == "1"
+    time.sleep(5)
+    tomar_screenshot(driver, "carrito.png")
