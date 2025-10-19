@@ -2,7 +2,6 @@
 
 Autora: Ariadna Arias
 Fecha: Octubre - 2025
-GitHub: https://github.com/AriadnaArias
 
 ##  Descripción del proyecto
 
@@ -22,7 +21,7 @@ Validar mediante pruebas automatizadas que las funciones principales del sitio S
 
 ##  Tecnologías utilizadas
 
-Python 
+Python → lenguaje 
 
 Pytest → estructura de testing
 
@@ -36,15 +35,15 @@ Git y GitHub → control de versiones y publicación del proyecto
 
 ## Instrucciones de instalación y ejecución
 
-instalar Python y comprobar la instalación en la consola con: python --v
+Instalar Python y comprobar la instalación en la consola con: python --v
 
-instalar Pytest y el plugin para generar el reporte de errores con: pip install pytest pytest-html
+Instalar Pytest y el plugin para generar el reporte de errores con: pip install pytest pytest-html
 
-instalar selenium con el comando en consola: pip install selenium
+Instalar selenium con el comando en consola: pip install selenium
 
-instalar el manager del webdriven con el comando en consola: pip install webdriver-manager
+Instalar el manager del webdriven con el comando en consola: pip install webdriver-manager
 
 Comando para ejecutar las pruebas
 para generar un reporte HTML: pytest -v --html=reports/report.html --self-contained-html
 
-para hacer correr los tests sin el reporte, ejecutar el siguiente comando: pytest -v
+Para hacer correr los tests sin el reporte, ejecutar el siguiente comando: pytest -v
